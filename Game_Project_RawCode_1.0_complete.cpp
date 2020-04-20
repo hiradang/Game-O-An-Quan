@@ -23,6 +23,7 @@ coordinate scatter(coordinate chosenCell);
 string check(coordinate chosenCell);
 string checkSum(coordinate chosenCell);
 void move(coordinate chosenCell);
+void sumEndGame();
 
 int main(){
     initiate();
@@ -46,7 +47,9 @@ int main(){
         update();
         exchange();
     }
-
+    sumEndGame(); // sum up the remaining cells
+    system("cls");
+    update();
     cout << "Game over!" << endl;
     if (scorePlayer[0] > scorePlayer[1]) cout << "Player 1 wins";
     else if (scorePlayer[0] < scorePlayer[1]) cout << "Player 2 wins";
@@ -323,4 +326,9 @@ void move(coordinate chosenCell){
     }
 }
 
-
+void sumEndGame(){
+    for (int i = 1; i<=5; i++){
+        scorePlayer[0] += a[0][i];
+        scorePlayer[1] += a[1][i];
+    }
+}
