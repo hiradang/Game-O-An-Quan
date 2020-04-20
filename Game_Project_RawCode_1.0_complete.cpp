@@ -42,6 +42,7 @@ int main(){
 
         coordinate chosenCell = select();
         move(chosenCell);
+        system("cls");
         update();
         exchange();
     }
